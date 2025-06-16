@@ -1,9 +1,34 @@
-import 'package:english_words/english_words.dart';
+
+//import 'package:english_words/english_words.dart';
+import 'package:animales_domesticos/screens/generator_cat_page.dart';
+import 'package:animales_domesticos/screens/generator_dog_page.dart';
+import 'package:animales_domesticos/screens/generator_fish_page.dart';
+import 'package:animales_domesticos/screens/generator_hamster_page.dart';
+import 'package:animales_domesticos/screens/generator_parrot_page.dart';
+import 'package:animales_domesticos/screens/generator_rabbit_page.dart';
+import 'package:animales_domesticos/screens/generator_tortoise_page.dart';
+import 'package:animales_domesticos/screens/my_home_page.dart';
+import 'package:animales_domesticos/screens/navegation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => MyAppStateCat()),
+        ChangeNotifierProvider(create: (_) => MyAppStateDog()),
+        ChangeNotifierProvider(create: (_) => MyAppStateFish()),
+        ChangeNotifierProvider(create: (_) => MyAppStateHamster()),
+        ChangeNotifierProvider(create: (_) => MyAppStateParrot()),
+        ChangeNotifierProvider(create: (_) => MyAppStateRabbit()),
+        ChangeNotifierProvider(create: (_) => MyAppStateTortoise()),
+        ChangeNotifierProvider(create: (_) => NavigationProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,89 +36,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Namer App',
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrangeAccent)
-          //colorScheme: ColorScheme.highContrastDark(surfaceContainerHigh: Colors.amber)
-        ),
-        home: MyHomePage(),
+    return MaterialApp(
+      home: MyHomePage(),
+      title: 'Enciclopedia de Mascotas',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 42, 151, 51))
       ),
     );
   }
 }
 
-class MyAppState extends ChangeNotifier {
-  var current = WordPair.random();
 
-  // ↓ Add this.
-  void getNext() {
-    current = WordPair.random();
-    notifyListeners();
-  }
-
-}
-
-// ...
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
-    var pair = appState.current;                 // ← Add this.
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('Palabra aleatoria')),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BigCard(pair: pair),
-            SizedBox(height: 10),             // ← Change to this.
-            ElevatedButton(
-              onPressed: () {
-                appState.getNext();
-              },
-              child: Text('Next'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class BigCard extends StatelessWidget {
-  const BigCard({
-    super.key,
-    required this.pair,
-  });
-
-  final WordPair pair;
-
-  @override
-  Widget build(BuildContext context) {
-
-    final theme = Theme.of(context);
-    final style = theme.textTheme.displayMedium!.copyWith(
-
-      color: theme.colorScheme.onSecondary,
-    );
-
-    return Card(
-      elevation: 5.0,
-      color: theme.colorScheme.primary,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Text(pair.asLowerCase, style: style, semanticsLabel: "${pair.first} ${pair.second}",),
-      ),
-    );
-  }
-}
-
-// ...
