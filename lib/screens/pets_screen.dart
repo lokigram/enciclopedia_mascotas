@@ -9,7 +9,6 @@ class PetsScreen<T> extends StatelessWidget {
   final AnimalToString<T> getSubtitle;
   final AnimalToString<T> getImage;
   final AnimalToString<T> getDescription;
-  final VoidCallback? onBack;
 
   const PetsScreen({
     super.key,
@@ -17,7 +16,6 @@ class PetsScreen<T> extends StatelessWidget {
     required this.getSubtitle,
     required this.getImage,
     required this.getDescription,
-    this.onBack,
   });
 
   @override
@@ -102,15 +100,6 @@ class PetsScreen<T> extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ),
-        Positioned(
-          top: 8,
-          left: 0,
-          child: ElevatedButton.icon(
-            icon: const Icon(Icons.arrow_back, size: 24),
-            onPressed: onBack,
-            label: Text('Atras'),
           ),
         ),
       ],

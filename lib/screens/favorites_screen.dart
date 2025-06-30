@@ -40,7 +40,7 @@ class FavoritesScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(20),
-                child: Text('FAVORITOS: tienes ${favorites.length} favorito(s)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                child: Text( favorites.length == 1 ? 'FAVORITO: Tiene ${favorites.length} favorito':'FAVORITOS: Tienes ${favorites.length} favoritos', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
               ),
               for (var item in favorites)
                 ListTile(

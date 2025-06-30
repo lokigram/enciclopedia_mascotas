@@ -1,13 +1,9 @@
 
-//import 'package:english_words/english_words.dart';
-// import 'package:animales_domesticos/config/theme.dart';
-// import 'package:animales_domesticos/config/util.dart';
 import 'package:animales_domesticos/models/pets_repository.dart';
 import 'package:animales_domesticos/screens/menu_screen.dart';
 import 'package:animales_domesticos/states/my_app_state.dart';
 import 'package:animales_domesticos/models/pets_model.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -59,16 +55,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TextTheme textTheme = createTextTheme(context, "ABeeZee", "Gamja Flower");
-    // MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp(
       home: MenuScreen(),
       title: 'Enciclopedia de Mascotas',
-      // theme: theme.light(),
       theme: ThemeData(
         fontFamily: 'ABeeZee-Regular',
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 42, 151, 51))
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 166, 169, 169))
       ),
     );
   }
