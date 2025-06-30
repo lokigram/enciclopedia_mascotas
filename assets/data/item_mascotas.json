@@ -1,0 +1,44 @@
+[
+    {
+        "tipo": "Perro",
+        "imagen": "assets/images/perro.png",
+        "sonido": "sounds/perro.mp3",
+        "caracteristica": "El perro es un animal doméstico muy querido por su lealtad y compañía."
+    },
+    {
+        "tipo": "Gato",
+        "imagen": "assets/images/gato.png",
+        "sonido": "sounds/gato.mp3",
+        "caracteristica": "El gato es un animal independiente y juguetón, conocido por su elegancia."
+    },
+    {
+        "tipo": "Loro",
+        "imagen": "assets/images/loro.png",
+        "sonido": "sounds/loro.mp3",
+        "caracteristica": "El loro es un ave colorida y habladora, famosa por su capacidad de imitar sonidos."
+    },
+    {
+        "tipo": "Tortuga",
+        "imagen": "assets/images/tortuga.png",
+        "sonido": "sounds/tortuga.mp3",
+        "caracteristica": "La tortuga es un reptil de caparazón duro, conocido por su longevidad y lentitud."
+    },
+    {
+        "tipo": "Conejo",
+        "imagen": "assets/images/conejo.png",
+        "sonido": "sounds/conejo.mp3",
+        "caracteristica": "El conejo es un animal pequeño y peludo, famoso por sus largas orejas y saltos."
+    },
+    {
+        "tipo": "Hamster",
+        "imagen": "assets/images/hamster.png",
+        "sonido": "sounds/Hamster.mp3",
+        "caracteristica": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona."
+    },
+    {
+        "tipo": "Pez",
+        "imagen": "assets/images/pez.png",
+        "sonido": "sounds/pez.mp3",
+        "caracteristica": "El pez es un animal acuático, conocido por su belleza y variedad de especies."
+    }
+]

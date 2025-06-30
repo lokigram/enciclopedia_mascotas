@@ -1,0 +1,186 @@
+[
+    {
+        "tipo": "Perro",
+        "rasgo": "populares:\nEl perro es un animal doméstico muy querido por su lealtad y compañía.",
+        "retrato": "assets/images/bulldog_frances.png",
+        "raza": "Bulldog Francés",
+        "color": "Cafe",
+        "esFavorito": false
+    },
+    {
+        "tipo": "Perro",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Golden Retriever",
+        "rasgo": "populares:\nEl perro es un animal doméstico muy querido por su lealtad y compañía.",
+        "retrato": "assets/images/golden.png"
+    },
+    {
+        "tipo": "Perro",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Chihuahua",
+        "rasgo": "pequeños:\nEl perro es un animal doméstico muy querido por su lealtad y compañía.",
+        "retrato": "assets/images/chihuahua.png"
+    },
+    {
+        "tipo": "Perro",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Pastor Alemán",
+        "rasgo": "guardianes:\nEl perro es un animal doméstico muy querido por su lealtad y compañía.",
+        "retrato": "assets/images/pastor_aleman.png"
+    },
+    {
+        "tipo": "Perro",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Labrador Retriever",
+        "rasgo": "populares:\nEl perro es un animal doméstico muy querido por su lealtad y compañía.",
+        "retrato": "assets/images/labrador.png"
+    },
+    {
+        "tipo": "Gato",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Siames",
+        "rasgo": "Pelo corto:\nEl gato es un animal independiente y juguetón, conocido por su elegancia.",
+        "retrato": "assets/images/siames.png"
+    },
+    {
+        "tipo": "Gato",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Persa",
+        "rasgo": "Pelo largo:\nEl gato es un animal independiente y juguetón, conocido por su elegancia.",
+        "retrato": "assets/images/persa.png"
+    },
+    {
+        "tipo": "Gato",
+        "color": "Cafe",
+        "esFavorito": false,
+        "raza": "Maine Coon",
+        "rasgo": "paton unico:\nEl gato es un animal independiente y juguetón, conocido por su elegancia.",
+        "retrato": "assets/images/maine_coon.png"
+    },
+    {
+        "tipo": "Loro",
+        "esFavorito": false,
+        "rasgo": "El loro es un ave colorida y habladora, famosa por su capacidad de imitar sonidos.",
+        "especie": "Cacatúa",
+        "color": "Blanco y amarillo",
+        "retrato": "assets/images/cacatua.png"
+    },
+    {
+        "tipo": "Loro",
+        "esFavorito": false,
+        "rasgo": "El loro es un ave colorida y habladora, famosa por su capacidad de imitar sonidos.",
+        "especie": "Loro Amazónico",
+        "color": "Verde",
+        "retrato": "assets/images/loro_amazonico.png"
+    },
+    {
+        "tipo": "Loro",
+        "esFavorito": false,
+        "rasgo": "El loro es un ave colorida y habladora, famosa por su capacidad de imitar sonidos.",
+        "especie": "Guacamayo",
+        "color": "Azul y amarillo",
+        "retrato": "assets/images/guacamayo.png"
+    },
+    {
+        "tipo": "Tortuga",
+        "esFavorito": false,
+        "rasgo": "La tortuga es un reptil de caparazón duro, conocido por su longevidad y lentitud.",
+        "especie": "Tortuga de tierra",
+        "color": "Verde y marrón",
+        "retrato": "assets/images/tortuga_tierra.png"
+    },
+    {
+        "tipo": "Tortuga",
+        "esFavorito": false,
+        "rasgo": "La tortuga es un reptil de caparazón duro, conocido por su longevidad y lentitud.",
+        "especie": "Tortuga rusa",
+        "color": "Marrón claro",
+        "retrato": "assets/images/tortuga_rusa.png"
+    },
+    {
+        "tipo": "Tortuga",
+        "esFavorito": false,
+        "rasgo": "La tortuga es un reptil de caparazón duro, conocido por su longevidad y lentitud.",
+        "especie": "Tortuga de orejas rojas",
+        "color": "Verde y rojo",
+        "retrato": "assets/images/tortuga_orejas_rojas.png"
+    },
+    {
+        "tipo": "Conejo",
+        "esFavorito": false,
+        "rasgo": "El conejo es un animal pequeño y peludo, famoso por sus largas orejas y saltos.",
+        "raza": "Enano Holandés",
+        "color": "Blanco y negro",
+        "retrato": "assets/images/enano_holandes.png"
+        },
+    {
+        "tipo": "Conejo",
+        "esFavorito": false,
+        "rasgo": "El conejo es un animal pequeño y peludo, famoso por sus largas orejas y saltos.",
+        "raza": "Cabeza de León",
+        "color": "Gris",
+        "retrato": "assets/images/cabeza_de_leon.png"
+    },
+    {
+        "tipo": "Conejo",
+        "esFavorito": false,
+        "rasgo": "El conejo es un animal pequeño y peludo, famoso por sus largas orejas y saltos.",
+        "raza": "Rex",
+        "color": "Marrón",
+        "retrato": "assets/images/rex.png"
+    },
+    {
+        "tipo": "Hamster",
+        "esFavorito": false,
+        "rasgo": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona.",
+        "raza": "Sirio",
+        "color": "Dorado",
+        "retrato": "assets/images/hamster_sirio.png"
+    },
+    {
+        "tipo": "Hamster",
+        "esFavorito": false,
+        "rasgo": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona.",
+        "raza": "Enano Ruso",
+        "color": "Gris",
+        "retrato": "assets/images/hamster_ruso.png"
+    },
+    {
+        "tipo": "Hamster",
+        "esFavorito": false,
+        "rasgo": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona.",
+        "raza": "Roborovski",
+        "color": "Blanco y marrón",
+        "retrato": "assets/images/hamster_roborovski.png"
+    },
+    {
+        "tipo": "Pez",
+        "esFavorito": false,
+        "rasgo": "El pez es un animal acuático, conocido por su belleza y variedad de especies.",
+        "especie": "Betta",
+        "color": "Rojo y azul",
+        "retrato": "assets/images/betta.png"
+    },
+    {
+        "tipo": "Pez",
+        "esFavorito": false,
+        "rasgo": "El pez es un animal acuático, conocido por su belleza y variedad de especies.",
+        "especie": "Goldfish",
+        "color": "Naranja",
+        "retrato": "assets/images/goldfish.png"
+    },
+    {
+        "tipo": "Pez",
+        "esFavorito": false,
+        "rasgo": "El pez es un animal acuático, conocido por su belleza y variedad de especies.",
+        "especie": "Guppy",
+        "color": "Multicolor",
+        "retrato": "assets/images/guppy.png"
+    }
+]
