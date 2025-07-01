@@ -60,8 +60,9 @@ class MyApp extends StatelessWidget {
       title: 'Enciclopedia de Mascotas',
       theme: ThemeData(
         fontFamily: 'ABeeZee-Regular',
+        brightness: Brightness.light,
+        colorSchemeSeed: Color.fromRGBO(188, 0, 74, 1.0),
         useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 166, 169, 169))
       ),
     );
   }

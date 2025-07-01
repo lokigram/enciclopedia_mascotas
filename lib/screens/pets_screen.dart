@@ -24,83 +24,80 @@ class PetsScreen<T> extends StatelessWidget {
     // ↓ Add this.
     final style = theme.textTheme.displayMedium!.copyWith(
       color: theme.colorScheme.onPrimary,
-      fontSize: 36,
-      fontFamily: 'ABeeZee-Regular'
+      fontFamily: 'ABeeZee-Regular',
+      fontSize: 36
     );
     var appState = context.watch<MyAppState<T>>();
     final items = appState.items.whereType<T>().toList();
     final current = appState.current;
 
     return items.isEmpty ? Center(child: Text('No hay elementos disponibles.'))
-    :Stack(
+    :Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SingleChildScrollView(
-          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Card(
-                  color: theme.colorScheme.primary,
-                  elevation: 5.0,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(getTitle(current), style: style)
-                  ),
-                ),
-                Image.asset(getImage(current), height: 180),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back),
-                      onPressed: () {
-                        final prev = items.indexOf(current) - 1;
-                        if (prev >= 0) {
-                          appState.getTravel(prev);
-                        }
-                      },
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title: Text(getSubtitle(current)),
-                            content: SizedBox(
-                              width: 100,
-                              child: Text(getDescription(current), textAlign: TextAlign.justify),
-                            ),
-                            actions: [                            
-                              TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text('Cerrar'),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                      icon: Icon(Icons.menu_outlined),
-                    ),
-                    IconButton(
-                      icon: Icon( !appState.favorites.contains(current) ? Icons.favorite_border   :  Icons.favorite, color: Colors.red),
-                      onPressed: appState.toggleFavorite
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.arrow_forward),
-                      onPressed: () {
-                        final next = items.indexOf(current) + 1;
-                        if (next < items.length) {
-                          appState.getTravel(next);
-                        }
-                      },
-                    ),
-                  ],
-                ),
-              ],
+        Card(
+          color: theme.colorScheme.primary,
+          elevation: 5.0,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(getTitle(current), style: style,)
             ),
           ),
+        ),
+        SizedBox(height: 20.0,),
+        Image.asset(getImage(current), height: 180),
+        SizedBox(height: 8.0,),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.arrow_back_ios_outlined, size: 32.0,),
+              onPressed: () {
+                final prev = items.indexOf(current) - 1;
+                if (prev >= 0) {
+                  appState.getTravel(prev);
+                }
+              },
+            ),
+            SizedBox(width: 16.0,),
+            IconButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text(getSubtitle(current)),
+                    content: SizedBox(
+                      width: 100,
+                      child: Text(getDescription(current), textAlign: TextAlign.justify),
+                    ),
+                    actions: [                            
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text('Cerrar'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              icon: Icon(Icons.menu_outlined, size: 32.0,),
+            ),
+            SizedBox(width: 16.0,),
+            IconButton(
+              icon: Icon( !appState.favorites.contains(current) ? Icons.favorite_border   :  Icons.favorite, color: Colors.red, size: 32.0,),
+              onPressed: appState.toggleFavorite
+            ),
+            SizedBox(width: 16.0,),
+            IconButton(
+              icon: const Icon(Icons.arrow_forward_ios_outlined, size: 32.0,),
+              onPressed: () {
+                final next = items.indexOf(current) + 1;
+                if (next < items.length) {
+                  appState.getTravel(next);
+                }
+              },
+            ),
+          ],
         ),
       ],
     );

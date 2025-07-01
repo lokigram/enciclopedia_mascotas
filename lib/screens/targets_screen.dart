@@ -37,6 +37,12 @@ class _TargetsScreenState extends State<TargetsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      fontFamily: 'GamjaFlower-Regular',
+      fontSize: 24,
+    );
     final orientacion = MediaQuery.of(context).orientation;
 
     Widget? page;
@@ -105,28 +111,26 @@ class _TargetsScreenState extends State<TargetsScreen> {
     return _cargando
         ? Center(child: CircularProgressIndicator())
         : (itemSelect != null && page != null)
-            ? Stack(
-                children: [
-                  page,
-                  Positioned(
-                    top: 5,
-                    left: 5,
-                    child: FloatingActionButton.small(
-                      heroTag: 'back_btn',
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      elevation: 4,
-                      onPressed: () {
-                        setState(() {
-                          itemSelect = null;
-                        });
-                      },
-                      child: const Icon(Icons.arrow_back),
-                      
-                    ),
-                  ),
-                ],
+            ? Scaffold(
+              body: SizedBox(
+
+                height: double.infinity,
+                child: Center(
+                  child: page
+                  )
+                ),
+              floatingActionButton: FloatingActionButton.extended(
+                heroTag: 'back_btn',
+                elevation: 4,
+                onPressed: () {
+                  setState(() {
+                    itemSelect = null;
+                  });
+                },
+                icon: const Icon(Icons.arrow_back),
+                label: Text('Retroceder', style: style,),                                       
               )
+            )
             : Column(
               children: [
                 Expanded(
@@ -268,10 +272,10 @@ class ItemMascotaCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final style = theme.textTheme.displayMedium!.copyWith(
-      color: theme.colorScheme.onSecondary,
       fontSize: 16,
       fontWeight: FontWeight.bold,
       letterSpacing: 1,
+      fontFamily: 'GamjaFlower-Regular'
     );
     return Card(
       clipBehavior: Clip.hardEdge,

@@ -12,7 +12,13 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  
+  final theme = Theme.of(context);
+    // ↓ Add this.
+    final style = theme.textTheme.displayMedium!.copyWith(
+      fontFamily: 'GamjaFlower-Regular',
+      fontWeight: FontWeight.bold,
+      fontSize: 24,
+    );
 
 
   // Usar los providers de cada tipo de mascota para obtener todos los favoritos
@@ -40,11 +46,11 @@ class FavoritesScreen extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(20),
-                child: Text( favorites.length == 1 ? 'FAVORITO: Tiene ${favorites.length} favorito':'FAVORITOS: Tienes ${favorites.length} favoritos', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                child: Text( favorites.length == 1 ? 'FAVORITO: Tiene ${favorites.length} favorito':'FAVORITOS: Tienes ${favorites.length} favoritos', style: style),
               ),
               for (var item in favorites)
                 ListTile(
-                  leading: Icon(Icons.favorite, color: Colors.red),
+                  leading: Icon(Icons.favorite, color: Colors.red, size: 32.0,),
                   title: Text(
                     item is Dog
                         ? 'Perro: ${item.raza}'

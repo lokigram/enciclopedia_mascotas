@@ -5,31 +5,38 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme.displayMedium!.copyWith(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'GamjaFlower-Regular'
+    );
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: [
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [            
             Stack(
-              alignment: Alignment(0.0, 0.6),
+              alignment: Alignment(0.0, 0.8),
               children: <Widget>[
                 Text(
-                  'Bienvenidos a la enciclopedia de mascotas', 
-                  style: TextStyle(fontSize: 32, fontFamily: 'GamjaFlower-Regular'),
+                  'Enciclopedia de mascotas', 
+                  style: style,
                   textAlign: TextAlign.center
-                ),          
+                ),  
                 Image.asset(
                   'assets/images/portada.png',
                   height: 250,
                   fit: BoxFit.contain,
-                ),
+                ),          
               ],
             ),
+            SizedBox(height: 8.0,),
             Text(
-              'La elección de una mascota depende de factores como el estilo de vida, el espacio disponible y el nivel de compromiso del dueño.', 
-              style: TextStyle(fontSize: 14),
-              textAlign: TextAlign.justify
-            ),
+                  'La elección de una mascota depende de factores como el estilo de vida, el espacio disponible y el nivel de compromiso del dueño.', 
+                  style: TextStyle(fontSize: 14),
+                  textAlign: TextAlign.justify
+                ),
           ]
         ),
       ),

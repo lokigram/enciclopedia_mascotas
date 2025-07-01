@@ -13,6 +13,7 @@ class _MenuScreenState extends State<MenuScreen> {
   int _selectedIndex = 0;
   double groupAlignment = -1.0;
   NavigationRailLabelType labelType = NavigationRailLabelType.all;
+  
 
   @override
   Widget build(BuildContext context){
@@ -32,13 +33,12 @@ class _MenuScreenState extends State<MenuScreen> {
       default:
         throw UnimplementedError('no existe el widget para $_selectedIndex');
     }
-    return Scaffold(      
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+    return Scaffold(
       bottomNavigationBar: MediaQuery.of(context).size.width < 640 
       ?BottomNavigationBar(
         currentIndex: _selectedIndex,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: theme.colorScheme.secondary,
+        unselectedItemColor: theme.colorScheme.secondary,
+        selectedItemColor: theme.colorScheme.primary,
         onTap: (int value) {
           setState(() {
             _selectedIndex = value;
@@ -47,7 +47,7 @@ class _MenuScreenState extends State<MenuScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Enciclopedia'),
           BottomNavigationBarItem(icon: Icon(Icons.pets_outlined), label: 'Mascotas'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite, color: Colors.green,), label: 'Favoritos',),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite, color: Colors.redAccent,), label: 'Favoritos',),
         ]
       )
       : null,
@@ -74,7 +74,7 @@ class _MenuScreenState extends State<MenuScreen> {
                   label: Text('Mascotas'),
                 ),
                 NavigationRailDestination(
-                  icon: Icon(Icons.favorite, color: Colors.green,),
+                  icon: Icon(Icons.favorite, color: Colors.redAccent,),
                   label: Text('Favoritos',),
                 ),
               ],
@@ -82,7 +82,6 @@ class _MenuScreenState extends State<MenuScreen> {
             const VerticalDivider(thickness: 1, width: 1),
             Expanded(
               child: Container(
-                color: Theme.of(context).colorScheme.primaryContainer,
                 child: page,
               ),
             ),
