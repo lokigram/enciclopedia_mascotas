@@ -9,7 +9,7 @@ class MyAppState<T> extends ChangeNotifier {
     current = items[0];
   }
 
-  void getTravel(int index) {
+  void getTravel(index) {
     current = items[index];
     notifyListeners();
   }
@@ -23,9 +23,9 @@ class MyAppState<T> extends ChangeNotifier {
     }
     notifyListeners();
   }
-  void toggleFavoriteDelete(current) {
-    if (favorites.contains(current)) {
-      favorites.remove(current);
+  void toggleFavoriteDelete(item) {
+    if (favorites.contains(item)) {
+      favorites.remove(item);
       
     }
     notifyListeners();

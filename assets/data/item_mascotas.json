@@ -32,7 +32,7 @@
     {
         "tipo": "HAMSTER",
         "imagen": "assets/images/hamster.png",
-        "sonido": "sounds/Hamster.mp3",
+        "sonido": "sounds/hamster.mp3",
         "caracteristica": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona."
     },
     {

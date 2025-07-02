@@ -149,7 +149,7 @@
         "rasgo": "El hámster es un pequeño roedor, popular como mascota por su tamaño y naturaleza juguetona.",
         "raza": "Enano Ruso",
         "color": "Gris",
-        "retrato": "assets/images/hamster_ruso.png"
+        "retrato": "assets/images/hamster_enano.png"
     },
     {
         "tipo": "Hamster",

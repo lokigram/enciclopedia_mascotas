@@ -1,7 +1,10 @@
+import 'package:animales_domesticos/models/pets_model.dart';
 import 'package:animales_domesticos/screens/favorites_screen.dart';
 import 'package:animales_domesticos/screens/home_screen.dart';
 import 'package:animales_domesticos/screens/targets_screen.dart';
+import 'package:animales_domesticos/states/my_app_state.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatefulWidget {
   @override
@@ -17,6 +20,23 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context){
+    final dogFavs = context.watch<MyAppState<Dog>>().favorites;
+    final catFavs = context.watch<MyAppState<Cat>>().favorites;
+    final parrotFavs = context.watch<MyAppState<Parrot>>().favorites;
+    final tortoiseFavs = context.watch<MyAppState<Tortoise>>().favorites;
+    final rabbitFavs = context.watch<MyAppState<Rabbit>>().favorites;
+    final hamsterFavs = context.watch<MyAppState<Hamster>>().favorites;
+    final fishFavs = context.watch<MyAppState<Fish>>().favorites;
+
+    final List favoritos = [
+      ...dogFavs,
+      ...catFavs,
+      ...parrotFavs,
+      ...tortoiseFavs,
+      ...rabbitFavs,
+      ...hamsterFavs,
+      ...fishFavs,
+    ];
     final theme = Theme.of(context);
     
     Widget page;
@@ -28,7 +48,7 @@ class _MenuScreenState extends State<MenuScreen> {
         page = TargetsScreen();
       break;
       case 2:
-        page = FavoritesScreen();
+        page = FavoritesScreen(favorites: favoritos,);
       break;
       default:
         throw UnimplementedError('no existe el widget para $_selectedIndex');
@@ -37,17 +57,17 @@ class _MenuScreenState extends State<MenuScreen> {
       bottomNavigationBar: MediaQuery.of(context).size.width < 640 
       ?BottomNavigationBar(
         currentIndex: _selectedIndex,
-        unselectedItemColor: theme.colorScheme.secondary,
-        selectedItemColor: theme.colorScheme.primary,
+        selectedItemColor: theme.colorScheme.onPrimaryContainer,
+        unselectedItemColor: theme.colorScheme.primary,
         onTap: (int value) {
           setState(() {
             _selectedIndex = value;
           });
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Enciclopedia'),
-          BottomNavigationBarItem(icon: Icon(Icons.pets_outlined), label: 'Mascotas'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite, color: Colors.redAccent,), label: 'Favoritos',),
+        items: [
+          const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Enciclopedia'),
+          const BottomNavigationBarItem(icon: Icon(Icons.pets_outlined), label: 'Mascotas'),
+          BottomNavigationBarItem(icon: Icon(favoritos.isEmpty ? Icons.favorite_border   :  Icons.favorite, color: Colors.red,), label: 'Favoritos',),
         ]
       )
       : null,
@@ -66,16 +86,16 @@ class _MenuScreenState extends State<MenuScreen> {
             labelType: labelType,
             destinations: [
                 NavigationRailDestination(
-                  icon: Icon(Icons.home),
-                  label: Text('Enciclopedia',),
+                  icon: Icon(Icons.home, color: theme.colorScheme.primary,),
+                  label: Text('Enciclopedia', style: TextStyle(color: theme.colorScheme.primary),),
                 ),                 
                 NavigationRailDestination(
-                  icon: Icon(Icons.pets_outlined),
-                  label: Text('Mascotas'),
+                  icon: Icon(Icons.pets_outlined, color: theme.colorScheme.primary,),
+                  label: Text('Mascotas', style: TextStyle(color: theme.colorScheme.primary),),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.favorite, color: Colors.redAccent,),
-                  label: Text('Favoritos',),
+                  label: Text('Favoritos', style: TextStyle(color: theme.colorScheme.primary),),
                 ),
               ],
             ),

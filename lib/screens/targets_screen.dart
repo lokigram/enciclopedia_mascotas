@@ -128,7 +128,7 @@ class _TargetsScreenState extends State<TargetsScreen> {
                   });
                 },
                 icon: const Icon(Icons.arrow_back),
-                label: Text('Retroceder', style: style,),                                       
+                label: Text('Regresar', style: style,),                                       
               )
             )
             : Column(
